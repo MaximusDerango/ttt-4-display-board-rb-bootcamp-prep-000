@@ -3,6 +3,7 @@
 def display_board(markers)
   dim = 3
   div = "\n" + "-"*(dim**2 + (dim - 1)) + "\n"
-  rows = (0..8).step(dim).collect{|i| markers[i..i+dim-1].collect{|x| " #{x} "}.join("|")}
+  rows = (0..dim**2-1).step(dim).collect
+    {|i| markers[i..i+dim-1].collect{|x| " #{x} "}.join("|")}
   puts rows.join(div)
 end
